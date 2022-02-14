@@ -21,7 +21,7 @@ export const messagesSlice = createSlice({
       author: string,
       message: string
     }>) => {
-      state.value.push(action.payload)
+      state.value.unshift(action.payload)
     }
   }
 })

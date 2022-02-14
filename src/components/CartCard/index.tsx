@@ -1,11 +1,20 @@
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import AddCircleIcon from '@mui/icons-material/AddCircle';
-import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
-import IconButton from '@mui/material/IconButton';
+import Button from '@mui/material/Button';
 
-export const CartCard = ({ title, price, amount }: any) => {
+import { useDispatch } from 'react-redux';
+import { removeProduct } from '../../features/cartSlice';
+
+export const CartCard = ({ title, price, index }: any) => {
+
+  const dispatch = useDispatch()
+
+
+  const handleRemoveProductCart = (i: number) => {
+    dispatch(removeProduct(i))
+  }
+
   return (
     <Card 
       variant="outlined"
@@ -29,20 +38,15 @@ export const CartCard = ({ title, price, amount }: any) => {
         <Typography sx={{ fontSize: 20}}>
           {title}
         </Typography>
-        <Typography sx={{ fontSize: 20}}>
-          {`${price} $`}
-        </Typography>
         <Typography sx={{ fontSize: 20 }}>
-          {`x${amount}`}
+          {`${price}$`}
         </Typography>
-        <div>
-        <IconButton aria-label="adde">
-        <AddCircleIcon color="primary"/>
-        </IconButton>
-        <IconButton aria-label="remove">
-        <RemoveCircleIcon color="primary"/>
-        </IconButton>
-        </div>
+        <Button
+          size="small"
+          onClick={() => handleRemoveProductCart(index)}
+        >
+            Remover
+          </Button>
       </CardContent>
     </Card>
   )

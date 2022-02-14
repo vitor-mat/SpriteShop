@@ -5,7 +5,7 @@ import slime from '../../assets/images/slime.jpg';
 import dino from '../../assets/images/dino.jpg';
 import bugRock from '../../assets/images/bugRock.jpg';
 
-import { SpriteCard } from '../../components/SpritCard/index';
+import { SpriteCard } from '../../components/SpriteCard/index';
 
 export const Home = () => {
   return(
