@@ -1,0 +1,13 @@
+.messages-container{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+.messages-container h1{
+  font-size: 40px;
+  font-weight: 300;
+}
